@@ -299,7 +299,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.071985, y: 3.1495447, z: -9.864045}
+  m_LocalPosition: {x: -2.9298701, y: 3.1495447, z: -9.864045}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -432,7 +432,7 @@ GameObject:
   - component: {fileID: 1143743593}
   - component: {fileID: 1143743592}
   - component: {fileID: 1143743595}
-  - component: {fileID: 1143743597}
+  - component: {fileID: 1143743596}
   - component: {fileID: 1143743594}
   m_Layer: 0
   m_Name: Player
@@ -609,10 +609,10 @@ MonoBehaviour:
   jumpSpeed: 15
   gravity: 7
   ySpeed: 0
-  playermovement: {fileID: 1143743597}
+  playermovement: {fileID: 0}
   ground: {fileID: 375586680}
   head: {fileID: 1801556556}
---- !u!114 &1143743597
+--- !u!114 &1143743596
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -624,7 +624,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a2cc39b465114449a1713b5b275f283, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  suport: {fileID: 1143743595}
+  support: {fileID: 1143743595}
   speed: 10
 --- !u!1 &1305549563
 GameObject:

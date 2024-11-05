@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMoveSuport : MonoBehaviour
+public class PlayerMoveSupport : MonoBehaviour
 {
     private Animator anim = null;
     private bool isGround = false;

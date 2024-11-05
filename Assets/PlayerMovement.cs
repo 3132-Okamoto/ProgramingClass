@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public PlayerMoveSuport suport;
+    public PlayerMoveSupport support;
     public float speed = 10.0f;
 
     private Rigidbody2D rb = null;
@@ -22,10 +22,10 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         //Don't Change
-        ySpeed = suport.ySpeed;
+        ySpeed = support.ySpeed;
 
         //Change
-        if ((Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D)))
+        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
             xSpeed = speed;
         }
@@ -41,3 +41,28 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector2(xSpeed, ySpeed);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+/*
+if ((Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D)))
+{
+    xSpeed = speed;
+}
+else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
+{
+    xSpeed = -speed;
+}
+else
+{
+    xSpeed = 0.0f;
+}
+*/
