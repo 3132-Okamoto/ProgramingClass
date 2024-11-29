@@ -2,14 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovementExtra : MonoBehaviour
 {
-    public PlayerMoveSupport support;
+    public PlayerMoveSupportExtra support;
     public float speed = 10.0f;
 
     private Rigidbody2D rb = null;
     private float xSpeed;
     private float ySpeed;
+    private int coin=0;
 
 
     // Start is called before the first frame update
@@ -40,29 +41,15 @@ public class PlayerMovement : MonoBehaviour
 
         rb.velocity = new Vector2(xSpeed, ySpeed);
     }
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.tag=="Coin")
+        {
+            collider.tag = "CoinGot";
+            Destroy(collider.gameObject);
+            coin++;
+            Debug.Log(coin);
+        }
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-/*
-if ((Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D)))
-{
-    xSpeed = speed;
-}
-else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
-{
-    xSpeed = -speed;
-}
-else
-{
-    xSpeed = 0.0f;
-}
-*/
