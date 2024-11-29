@@ -25,11 +25,11 @@ public class PlayerMovement : MonoBehaviour
         ySpeed = support.ySpeed;
 
         //Change
-        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.RightArrow) && Input.GetKey(KeyCode.D))
         {
             xSpeed = speed;
         }
-        else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
+        else if (Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.A))
         {
             xSpeed = -speed;
         }

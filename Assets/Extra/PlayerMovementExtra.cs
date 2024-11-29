@@ -11,6 +11,8 @@ public class PlayerMovementExtra : MonoBehaviour
     private float xSpeed;
     private float ySpeed;
     private int coin=0;
+    private bool clear = false;
+    public int MaxCoin;
 
 
     // Start is called before the first frame update
@@ -30,7 +32,7 @@ public class PlayerMovementExtra : MonoBehaviour
         {
             xSpeed = speed;
         }
-        else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
+        else if(Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
             xSpeed = -speed;
         }
@@ -40,6 +42,11 @@ public class PlayerMovementExtra : MonoBehaviour
         }
 
         rb.velocity = new Vector2(xSpeed, ySpeed);
+        if (coin >= MaxCoin && !clear)
+        {
+            clear = true;
+            Debug.Log("clear");
+        }
     }
 
     void OnTriggerEnter2D(Collider2D collider)
@@ -49,7 +56,6 @@ public class PlayerMovementExtra : MonoBehaviour
             collider.tag = "CoinGot";
             Destroy(collider.gameObject);
             coin++;
-            Debug.Log(coin);
         }
     }
 }

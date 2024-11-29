@@ -41,12 +41,12 @@ public class PlayerMoveSupport : MonoBehaviour
         if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
             anim.SetBool("run", true);
-            transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
+            transform.localScale = new Vector2(1.5f, 1.5f);
         }
         else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
             anim.SetBool("run", true);
-            transform.localScale = new Vector3(-1.5f, 1.5f, 1.5f);
+            transform.localScale = new Vector2(-1.5f, 1.5f);
         }
         else
         {
@@ -75,7 +75,7 @@ public class PlayerMoveSupport : MonoBehaviour
             }
         }
 
-        if (Coin == 1 && !Clear)
+        if (Coin >= 1 && !Clear)
         {
             Clear = true;
             Debug.Log("Clear");
