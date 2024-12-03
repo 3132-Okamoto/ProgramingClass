@@ -42,7 +42,11 @@ public class PlayerMovementExtra : MonoBehaviour
         }
 
         rb.velocity = new Vector2(xSpeed, ySpeed);
-        if (coin >= MaxCoin && !clear)
+        if (MaxCoin==0)
+        {
+            Debug.Log("error");
+        }
+        else if (coin >= MaxCoin && !clear)
         {
             clear = true;
             Debug.Log("clear");

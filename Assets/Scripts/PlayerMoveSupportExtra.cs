@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMoveSupportExtra : MonoBehaviour
 {
+    private int[] ct = new int[20];
     private Animator anim = null;
     private bool isGround = false;
     private bool Jump = false;
@@ -14,7 +15,7 @@ public class PlayerMoveSupportExtra : MonoBehaviour
 
     public float jumpHeight = 4.0f;
     public float jumpSpeed = 15.0f;
-    public float gravity=7.0f;
+    public float gravity = 7.0f;
     public float ySpeed;
     public PlayerMovementExtra playermovement;
     public CheckingGround ground;
@@ -24,6 +25,25 @@ public class PlayerMoveSupportExtra : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
+        GameObject obj = (GameObject)Resources.Load("Coin");
+        for (int i = 0; i < 20; i++)
+        {
+            ct[i] = 1;
+        }
+        for (int j = 0; j < playermovement.MaxCoin; j++)
+        {
+            int x = Random.Range(0, 20);
+            if (ct[x] != 0)
+            {
+                ct[x]--;
+                int y = Random.Range(0, 40);
+                Instantiate(obj, new Vector2((float)x - 7.5f, (float)y/10f-2.5f), Quaternion.identity);
+            }
+            else
+            {
+                j--;
+            }
+        }
     }
 
     // Update is called once per frame
