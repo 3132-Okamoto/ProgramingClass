@@ -30,20 +30,32 @@ public class PlayerMoveSupportExtra : MonoBehaviour
         {
             ct[i] = 1;
         }
-        for (int j = 0; j < playermovement.MaxCoin; j++)
+        if(playermovement.maxCoin <= 0)
         {
-            int x = Random.Range(0, 20);
-            if (ct[x] != 0)
+            Debug.Log("No Coin!");
+        }
+        else if(playermovement.maxCoin > 20)
+        {
+            Debug.Log("Coin Over!");
+        }
+        else
+        {
+            for (int j = 0; j < playermovement.maxCoin; j++)
             {
-                ct[x]--;
-                int y = Random.Range(0, 40);
-                Instantiate(obj, new Vector2((float)x - 7.5f, (float)y/10f-2.5f), Quaternion.identity);
-            }
-            else
-            {
-                j--;
+                int x = Random.Range(0, 20);
+                if (ct[x] != 0)
+                {
+                    ct[x]--;
+                    int y = Random.Range(0, 40);
+                    Instantiate(obj, new Vector2((float)x - 7.5f, (float)y / 10f - 2.5f), Quaternion.identity);
+                }
+                else
+                {
+                    j--;
+                }
             }
         }
+        
     }
 
     // Update is called once per frame

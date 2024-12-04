@@ -25,17 +25,9 @@ public class PlayerMovement : MonoBehaviour
         ySpeed = support.ySpeed;
 
         //Change
-        if (Input.GetKey(KeyCode.RightArrow) && Input.GetKey(KeyCode.D))
+        if (false/*false‚ğÁ‚µ‚Ä‚±‚±‚ÉğŒ‚ğ‘‚­*/)
         {
             xSpeed = speed;
-        }
-        else if (Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.A))
-        {
-            xSpeed = -speed;
-        }
-        else
-        {
-            xSpeed = 0.0f;
         }
 
         rb.velocity = new Vector2(xSpeed, ySpeed);

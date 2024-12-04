@@ -150,7 +150,7 @@ Transform:
   m_GameObject: {fileID: 88616246}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.1401038, y: 3.1495447, z: -9.864045}
+  m_LocalPosition: {x: -1.6945968, y: 3.1495447, z: -9.864045}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -676,11 +676,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 641286973}
+  - component: {fileID: 641286980}
+  - component: {fileID: 641286975}
   - component: {fileID: 641286979}
   - component: {fileID: 641286978}
   - component: {fileID: 641286977}
-  - component: {fileID: 641286980}
-  - component: {fileID: 641286975}
   - component: {fileID: 641286974}
   m_Layer: 0
   m_Name: Player
@@ -2502,8 +2502,8 @@ Tilemap:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1154573542}
   - {fileID: 1928248237}
+  - {fileID: 1309842234}
   - {fileID: 120832211}
   - {fileID: 641286973}
-  - {fileID: 1154573542}
-  - {fileID: 1309842234}
