@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovementExtra : MonoBehaviour
 {
+    //Don't Change
     public PlayerMoveSupportExtra support;
     public float speed = 10.0f;
     public int maxCoin;
@@ -12,9 +13,10 @@ public class PlayerMovementExtra : MonoBehaviour
     private float xSpeed;
     private float ySpeed;
     private bool clear_flag = false;
-    //intŒ^‚Ì•Ï”coin‚ğéŒ¾‚µA0‚É‰Šú‰»
+    //Change
+    private int coin = 0;
 
-
+    //Don't Change
     // Start is called before the first frame update
     void Start()
     {
@@ -24,10 +26,8 @@ public class PlayerMovementExtra : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Don't Change
         ySpeed = support.ySpeed;
 
-        //Change
         if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
             xSpeed = speed;
@@ -42,12 +42,8 @@ public class PlayerMovementExtra : MonoBehaviour
         }
 
         rb.velocity = new Vector2(xSpeed, ySpeed);
-
-        if (maxCoin <= 0 || maxCoin > 20)
-        {
-            ;
-        }
-        else if (false/*false‚ğÁ‚µ‚Ä‚±‚±‚ÉğŒ‚ğ‘‚­*/ && !clear_flag)
+        
+        if (coin >= maxCoin && !clear_flag && maxCoin > 0 && maxCoin <= 20)
         {
             clear_flag = true;
             Debug.Log("clear");
@@ -60,7 +56,9 @@ public class PlayerMovementExtra : MonoBehaviour
         {
             collider.tag = "CoinGot";
             Destroy(collider.gameObject);
-            //‚±‚±‚ğ‘‚­
+            //Change
+            coin++;
+            Debug.Log(coin);
         }
     }
 }

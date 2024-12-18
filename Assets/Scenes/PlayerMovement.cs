@@ -25,10 +25,8 @@ public class PlayerMovement : MonoBehaviour
         ySpeed = support.ySpeed;
 
         //Change
-        if (false/*false‚ğÁ‚µ‚Ä‚±‚±‚ÉğŒ‚ğ‘‚­*/)
-        {
-            xSpeed = speed;
-        }
+
+
 
         rb.velocity = new Vector2(xSpeed, ySpeed);
     }
